@@ -11,8 +11,7 @@
             height: 100%;
             overflow: hidden;
             background: black;
-        }
-
+        
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -21,12 +20,19 @@
             height: 100vh;
         }
 
+        .cell {
+            position: relative;
+            overflow: hidden;
+        }
+            
         iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 300%;
-            height: 200%;
+            height: 300%;
             border: none;
-
-            transform: scale(0.3333, 0.5);
+            transform: scale(0.333333);
             transform-origin: top left;
         }
     </style>
