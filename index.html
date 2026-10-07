@@ -42,29 +42,33 @@
             background: black;
         }
 
+        /* Default settings for all six displays. */
         iframe {
             position: absolute;
             top: 0;
             left: 0;
 
-            /*
-             * Render each source page at the dashboard's full size.
-             * At a 1920 x 1200 browser viewport, each iframe's
-             * unscaled viewport is also 1920 x 1200.
-             */
             width: 100vw;
             height: 100vh;
 
             border: none;
             display: block;
 
-            /*
-             * Fit each page into one of the six panels:
-             * width  = 1920 / 3 = 640
-             * height = 1200 / 2 = 600
-             */
             transform: scale(calc(1 / 3), 0.5);
             transform-origin: top left;
+        }
+
+        /*
+         * G6 only: display at 80% of its previous size.
+         *
+         * Increase the internal viewport to compensate,
+         * so the iframe still fills its grid panel.
+         */
+        #g6 {
+            width: 125vw;
+            height: 125vh;
+
+            transform: scale(calc(0.8 / 3), calc(0.8 / 2));
         }
     </style>
 </head>
@@ -72,14 +76,17 @@
 <body>
     <main class="grid">
 
+        <!-- Top left: G6, individually zoomed out. -->
         <div class="panel">
             <iframe
+                id="g6"
                 title="ORD Gate G6"
                 src="https://ord-ws.visionairfids.com/?secret=CON_G_G6"
                 referrerpolicy="no-referrer">
             </iframe>
         </div>
 
+        <!-- Top center: G10. -->
         <div class="panel">
             <iframe
                 title="ORD Gate G10"
@@ -88,6 +95,7 @@
             </iframe>
         </div>
 
+        <!-- Top right: G11. -->
         <div class="panel">
             <iframe
                 title="ORD Gate G11"
@@ -96,6 +104,7 @@
             </iframe>
         </div>
 
+        <!-- Bottom left: G12. -->
         <div class="panel">
             <iframe
                 title="ORD Gate G12"
@@ -104,6 +113,7 @@
             </iframe>
         </div>
 
+        <!-- Bottom center: G14. -->
         <div class="panel">
             <iframe
                 title="ORD Gate G14"
@@ -112,6 +122,7 @@
             </iframe>
         </div>
 
+        <!-- Bottom right: G20. -->
         <div class="panel">
             <iframe
                 title="ORD Gate G20"
