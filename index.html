@@ -127,9 +127,36 @@
     <header class="toolbar">
       <span class="toolbar-title">ORD — Six Screen GIDS Dashboard</span>
 
+      <label>
+        Source width:
+        <input
+          id="sourceWidth"
+          type="number"
+          min="320"
+          max="7680"
+          value="1920"
+        >
+      </label>
+
+      <label>
+        Source height:
+        <input
+          id="sourceHeight"
+          type="number"
+          min="240"
+          max="4320"
+          value="1200"
+        >
+      </label>
+
+      <button id="applySize" type="button">Apply size</button>
+      <button id="reloadAll" type="button">Reload all</button>
+      <button id="fullscreen" type="button">Full screen</button>
+    </header>
+
     <main class="grid">
       <section class="panel">
-        <div class="panel-header">Concourse: G Gate: G6</div>
+        <div class="panel-header">Concourse: G   Gate: G6</div>
         <div class="viewport">
           <iframe
             title="CONGG6 Flight Information"
@@ -140,7 +167,7 @@
       </section>
 
       <section class="panel">
-        <div class="panel-header">Concourse: G Gate: G10</div>
+        <div class="panel-header">Concourse: G   Gate: G10</div>
         <div class="viewport">
           <iframe
             title="CONGG10 Flight Information"
@@ -151,7 +178,7 @@
       </section>
 
       <section class="panel">
-        <div class="panel-header">Concourse: G Gate: G11</div>
+        <div class="panel-header">Concourse: G   Gate: G11</div>
         <div class="viewport">
           <iframe
             title="CONGG11 Flight Information"
@@ -162,7 +189,7 @@
       </section>
 
       <section class="panel">
-        <div class="panel-header">Concourse: G Gate: G12</div>
+        <div class="panel-header">Concourse: G   Gate: G12</div>
         <div class="viewport">
           <iframe
             title="CONGG12 Flight Information"
@@ -173,7 +200,7 @@
       </section>
 
       <section class="panel">
-        <div class="panel-header">Concourse: G Gate: G14</div>
+        <div class="panel-header">Concourse: G   Gate: G14</div>
         <div class="viewport">
           <iframe
             title="CONGG14 Flight Information"
@@ -184,7 +211,7 @@
       </section>
 
       <section class="panel">
-        <div class="panel-header">Concourse: G Gate: G20</div>
+        <div class="panel-header">Concourse: G   Gate: G20</div>
         <div class="viewport">
           <iframe
             title="CONGG20 Flight Information"
