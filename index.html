@@ -237,19 +237,22 @@
         const availableWidth = viewport.clientWidth;
         const availableHeight = viewport.clientHeight;
 
-        if (!availableWidth || !availableHeight) return;
-
-        const scaleX = availableWidth / sourceWidth;
-        const scaleY = availableHeight / sourceHeight;
+        // Preserve the source aspect ratio and fit within the tile.
+        const scale = Math.min(
+          availableWidth / sourceWidth,
+          availableHeight / sourceHeight
+        );
 
         frame.style.width = `${sourceWidth}px`;
         frame.style.height = `${sourceHeight}px`;
+        frame.style.transform = `scale(${scale})`;
 
-        // Fill the tile in both directions.
-        frame.style.transform = `scale(${scaleX}, ${scaleY})`;
+        // Center the scaled page within the tile.
+        frame.style.left =
+          `${(availableWidth - sourceWidth * scale) / 2}px`;
 
-        frame.style.left = "0px";
-        frame.style.top = "0px";
+        frame.style.top =
+          `${(availableHeight - sourceHeight * scale) / 2}px`;
       });
     }
 
